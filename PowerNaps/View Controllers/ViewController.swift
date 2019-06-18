@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var napButton: UIButton!
     
@@ -22,28 +22,32 @@ class ViewController: UIViewController {
         timer.delegate = self
         
     }
-
+    
     @IBAction func buttonTapped(_ sender: Any) {
+        if timer.isOn {
+            timer.stopTimer()
+        } else {
+            timer.startTimer(5)
+        }
+        updateLabel()
+        updateButton()
     }
     
     func updateLabel() {
-        
+        if timer.isOn {
+            timeLabel.text = "\(timer.timeRemaining)"
+        } else {
+            timeLabel.text = "00.05"
+        }
     }
     
     func updateButton() {
-        
-    }
-    
-    func startTimer() {
-        
-    }
-    
-    func stopTimer() {
-        
-    }
-    
-    func setTimer() {
-        
+        if timer.isOn {
+            //If timer is on, button reads "Cancel", if off reads "Start"
+            napButton.setTitle("Cancel Nap", for: .normal)
+        } else {
+            napButton.setTitle("Start Nap", for: .normal)
+        }
     }
 }
 
@@ -51,15 +55,30 @@ class ViewController: UIViewController {
 extension ViewController: MyTimerDelegate {
     
     //Provide the data the VC class must conform to (step 5)
+    
     func timerSecondTicked() {
-        <#code#>
+        updateLabel()
     }
     
-    func timerStarted() {
-        <#code#>
+    func timerCompleted() {
+        updateLabel()
+        updateButton()
+        //Call the display alert controller function
     }
     
     func timerStopped() {
-        <#code#>
+        updateButton()
+        updateLabel()
     }
 }
+
+extension ViewController {
+    func displaySnoozeAlertController() {
+        
+    }
+}
+
+
+//delegate : send data from one controller to another
+//VC doenst know when seconds get ticked, what time the timer is at, etc. Has to get that info from the Model
+
