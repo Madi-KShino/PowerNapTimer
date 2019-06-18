@@ -12,6 +12,7 @@
 		534D680022B948900085702F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534D67FE22B948900085702F /* Main.storyboard */; };
 		534D680222B948910085702F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 534D680122B948910085702F /* Assets.xcassets */; };
 		534D680522B948910085702F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534D680322B948910085702F /* LaunchScreen.storyboard */; };
+		5358E38122B94F260084F4F6 /* MyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358E38022B94F260084F4F6 /* MyTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		534D680122B948910085702F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		534D680422B948910085702F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		534D680622B948910085702F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5358E38022B94F260084F4F6 /* MyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				5358E37F22B94D510084F4F6 /* Views */,
+				5358E38222B94F2E0084F4F6 /* Model */,
 				5358E37E22B94D460084F4F6 /* View Controllers */,
 			);
 			path = PowerNaps;
@@ -86,6 +89,14 @@
 				534D67FE22B948900085702F /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5358E38222B94F2E0084F4F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5358E38022B94F260084F4F6 /* MyTimer.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				534D67FD22B948900085702F /* ViewController.swift in Sources */,
+				5358E38122B94F260084F4F6 /* MyTimer.swift in Sources */,
 				534D67FB22B948900085702F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
